@@ -22,6 +22,7 @@ namespace AppScheduler.Models
         #region Private Variables
         private int _JobsID;
         private int _AppID;
+        private string _AppName;
         private TimeSpan _Time;
         private string _Day;
         private string _Success;
@@ -41,6 +42,12 @@ namespace AppScheduler.Models
         {
             get { return _AppID; }
             set { _AppID = value; }
+        }
+
+        public string AppName
+        {
+            get { return _AppName; }
+            set { _AppName = value; }
         }
 
         public Application App
@@ -102,13 +109,13 @@ namespace AppScheduler.Models
         public void Fill(MySqlDataReader dr)
         {
             _AppID = dr.GetInt32(db_AppID);
+            _AppName = dr.GetString(db_AppName);
             _JobsID = dr.GetInt32(db_JobID);
             _Time = dr.GetTimeSpan(db_Time);
             _Day = dr.GetString(db_Day);
             _Success = dr.GetString(db_Success);
             _FilesDwup = dr.GetInt32(db_FilesDwup);
             _FilesSorted = dr.GetInt32(db_FilesSorted);
-
 
         }
         #endregion

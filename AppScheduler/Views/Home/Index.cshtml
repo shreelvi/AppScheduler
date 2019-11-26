@@ -1,5 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IList<AppScheduler.Models.Schedule>
+@{
+    ViewData["Title"] = "Application Scheduler";
 }
 
+<h2>Application Schedule</h2>
 
+<div>
+    <table id="t01">
+        <thead>
+            <tr>
+                <th>App Name</th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>            
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.AppName</td>
+                @if (item.Day == "Sunday") { <td>@item.FilesDwup <br />@item.Time</td> }
+                <td></td>
+                <td>@item.AppName</td>
+                <td>@item.AppName</td>
+                <td>@item.AppName</td>
+                <td>@item.AppName</td>
+                <td>@item.AppName</td>
+                <td>@item.AppName</td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

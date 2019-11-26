@@ -14,6 +14,7 @@ namespace AppScheduler.Controllers
         {
             List<Schedule> Schedules = new List<Schedule>();
             Schedules = DAL.GetAppSchedule();
+            ViewBag.AppSchedule = Schedules;
             return View(Schedules);
         }
 
