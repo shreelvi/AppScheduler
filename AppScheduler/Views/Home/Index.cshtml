@@ -6,7 +6,7 @@
 <h2>Application Schedule</h2>
 
 <div>
-    <table class="table-responsive">
+    <table class="table">
         <thead>
             <tr>
                 <th>App Name</th>
@@ -24,14 +24,82 @@
             {
             <tr>
                 <td>@item.AppName</td>
-                @if (item.Day == "Sunday") { <td>@item.FilesDwup <br />@item.Time</td> }
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                @if (item.Day == "Sunday")
+                {
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                }
+                else if (item.Day == "Monday")
+                {
+                    <td></td>
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                }
+                else if (item.Day == "Tuesday")
+                {
+                    <td></td>
+                    <td></td>
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                }
+                else if (item.Day == "Wednesday")
+                {
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                }
+                else if (item.Day == "Thursday")
+                {
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                    <td></td>
+                    <td></td>
+
+                }
+                else if (item.Day == "Friday")
+                {
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                    <td></td>
+
+                }
+                else
+                {
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@item.Time<br />@item.Success<br /> @item.FilesDwup Files<br />Uploaded<br />@item.FilesSorted Files <br />Sorted</td>
+                }
+
             </tr>
             }
         </tbody>
